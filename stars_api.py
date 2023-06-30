@@ -3,21 +3,12 @@ from data import data
 
 app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return jsonify({
-        "data": data,
-        "message": "success"
-    }), 200
+#crie a api principal que retorna data
 
-@app.route("/star")
-def star():
-    name = request.args.get("name")
-    star_data = next(item for item in data if item["name"] == name)
-    return jsonify({
-        "data": star_data,
-        "message": "success"
-    }), 200
+
+#crie a api /star que retorna os dados de uma estrela
+
+
 
 if __name__ == "__main__":
     app.run()
